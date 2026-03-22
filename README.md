@@ -1,5 +1,29 @@
-# Vue 3 + TypeScript + Vite
+# 🏢 企业人员管理系统
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 功能特性
+- ✅ 用户登录（演示账号）
+- ✅ 人员管理：增删改查、搜索、部门筛选、分页、Excel导出
+- ✅ 订单管理：增删改查、状态管理
+- ✅ 岗位管理：权限模板配置
+- ✅ 权限控制：基于RBAC的菜单级 + 按钮级权限
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## 技术栈
+- Vue 3 + TypeScript
+- Pinia（状态管理）
+- Vue Router（路由守卫）
+- Element Plus（UI组件库）
+- xlsx（Excel导出）
+
+## 运行项目
+\`\`\`bash
+npm install
+npm run dev
+\`\`\`
+
+## 演示账号
+| 账号 | 密码 | 角色 | 权限 |
+|------|------|------|------|
+| zhangsan | 123 | 管理员 | 全部权限 |
+| lisi | 123 | 人事经理 | 人员管理 |
+| wangwu | 123 | 销售主管 | 订单管理 |
+| zhaoliu | 123 | 普通员工 | 只读 |
