@@ -85,9 +85,6 @@ zhaoliu	123	普通员工
 
 ---
 
-## 第3段：项目结构（复制这段）
-
-```markdown
 ## 📁 项目结构
 employee-system/
 ├── frontend/
@@ -105,6 +102,8 @@ employee-system/
 │ ├── database.sqlite
 │ └── package.json
 └── README.md
+
+---
 
 ## 📝 API 接口
 
