@@ -1,0 +1,149 @@
+### 测试服务器是否运行
+GET http://localhost:3000/
+
+### 登录测试 - 管理员
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "zhangsan",
+  "password": "123"
+}
+
+### 登录测试 - 人事
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "lisi",
+  "password": "123"
+}
+
+### 登录测试 - 销售
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "wangwu",
+  "password": "123"
+}
+
+### 登录测试 - 普通员工
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "zhaoliu",
+  "password": "123"
+}
+
+### 登录测试 - 错误密码
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "zhangsan",
+  "password": "wrong"
+}
+
+### 获取所有用户
+GET http://localhost:3000/api/users
+
+### 获取单个用户
+GET http://localhost:3000/api/users/1
+
+### 新增用户
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+  "username": "test001",
+  "name": "测试用户",
+  "position": "实习生",
+  "department": "技术部",
+  "phone": "13800138099"
+}
+
+### 更新用户
+PUT http://localhost:3000/api/users/5
+Content-Type: application/json
+
+{
+  "name": "测试用户（已更新）",
+  "position": "初级工程师",
+  "department": "技术部",
+  "phone": "13800138099"
+}
+
+### 删除用户
+DELETE http://localhost:3000/api/users/5
+
+### 更新用户权限
+PUT http://localhost:3000/api/users/2/permissions
+Content-Type: application/json
+
+{
+  "permissions": ["employee:view", "employee:add", "employee:edit", "employee:delete"]
+
+  
+}
+
+### 获取所有订单
+GET http://localhost:3000/api/orders
+
+### 获取单个订单
+GET http://localhost:3000/api/orders/ORD001
+
+### 新增订单
+POST http://localhost:3000/api/orders
+Content-Type: application/json
+
+{
+  "id": "ORD004",
+  "product": "iPad Pro",
+  "price": "6999",
+  "status": "待支付"
+}
+
+### 更新订单
+PUT http://localhost:3000/api/orders/ORD004
+Content-Type: application/json
+
+{
+  "product": "iPad Pro 2024",
+  "price": "7999",
+  "status": "已支付"
+}
+
+### 删除订单
+DELETE http://localhost:3000/api/orders/ORD004
+
+
+### 获取所有岗位
+GET http://localhost:3000/api/roles
+
+### 获取单个岗位
+GET http://localhost:3000/api/roles/1
+
+### 新增岗位
+POST http://localhost:3000/api/roles
+Content-Type: application/json
+
+{
+  "name": "实习生",
+  "description": "实习期员工",
+  "permissions": ["employee:view"]
+}
+
+### 更新岗位
+PUT http://localhost:3000/api/roles/5
+Content-Type: application/json
+
+{
+  "name": "初级工程师",
+  "description": "初级岗位",
+  "permissions": ["employee:view", "order:view"]
+}
+
+### 删除岗位
+DELETE http://localhost:3000/api/roles/5

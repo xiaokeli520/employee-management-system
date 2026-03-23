@@ -6,7 +6,7 @@
         <h2>企业管理系统</h2>
         <p>请输入账号密码登录</p>
       </div>
-      
+
       <el-form @submit.prevent="handleLogin">
         <el-form-item>
           <el-input
@@ -17,7 +17,7 @@
             clearable
           />
         </el-form-item>
-        
+
         <el-form-item>
           <el-input
             v-model="form.password"
@@ -29,14 +29,20 @@
             @keyup.enter="handleLogin"
           />
         </el-form-item>
-        
+
         <el-form-item>
-          <el-button type="primary" size="large" @click="handleLogin" :loading="loading" style="width: 100%">
+          <el-button
+            type="primary"
+            size="large"
+            @click="handleLogin"
+            :loading="loading"
+            style="width: 100%"
+          >
             登录
           </el-button>
         </el-form-item>
       </el-form>
-      
+
       <div class="demo-tips">
         <div class="tips-title">演示账号：</div>
         <div class="tips-list">
@@ -67,42 +73,39 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
-import { useRouter } from 'vue-router'
-import { useUserStore } from '@/stores/user'
-import { ElMessage } from 'element-plus'
+import { reactive, ref } from "vue";
+import { useRouter } from "vue-router";
+import { useUserStore } from "@/stores/user";
+import { ElMessage } from "element-plus";
 
-const router = useRouter()
-const userStore = useUserStore()
-const loading = ref(false)
+const router = useRouter();
+const userStore = useUserStore();
+const loading = ref(false);
 
 const form = reactive({
-  username: '',
-  password: ''
-})
+  username: "",
+  password: "",
+});
 
 const handleLogin = async () => {
   if (!form.username || !form.password) {
-    ElMessage.warning('请输入用户名和密码')
-    return
+    ElMessage.warning("请输入用户名和密码");
+    return;
   }
-  
-  loading.value = true
-  
-  // 模拟网络延迟
-  setTimeout(() => {
-    const result = userStore.login(form.username, form.password)
-    
-    if (result.success) {
-      ElMessage.success(`欢迎回来，${userStore.user?.name}`)
-      router.push('/')
-    } else {
-      ElMessage.error(result.message)
-    }
-    
-    loading.value = false
-  }, 500)
-}
+
+  loading.value = true;
+
+  const result = await userStore.login(form.username, form.password);
+
+  if (result.success) {
+    ElMessage.success(`欢迎回来，${userStore.user?.name}`);
+    router.push("/");
+  } else {
+    ElMessage.error(result.message || "登录失败");
+  }
+
+  loading.value = false;
+};
 </script>
 
 <style scoped>
@@ -180,10 +183,18 @@ const handleLogin = async () => {
   color: white;
 }
 
-.role-badge.admin { background: #409eff; }
-.role-badge.hr { background: #67c23a; }
-.role-badge.sale { background: #e6a23c; }
-.role-badge.employee { background: #909399; }
+.role-badge.admin {
+  background: #409eff;
+}
+.role-badge.hr {
+  background: #67c23a;
+}
+.role-badge.sale {
+  background: #e6a23c;
+}
+.role-badge.employee {
+  background: #909399;
+}
 
 .perm {
   font-size: 11px;
