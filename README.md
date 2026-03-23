@@ -86,7 +86,6 @@ zhaoliu	123	普通员工
 ---
 
 📁 项目结构
-bash
 employee-system/
 ├── frontend/
 │   ├── src/
@@ -103,8 +102,9 @@ employee-system/
 │   ├── database.sqlite
 │   └── package.json
 └── README.md
+
 📝 API 接口
-认证
+
 方法	路径	说明
 POST	/api/auth/login	用户登录
 用户管理
@@ -114,12 +114,14 @@ POST	/api/users	新增用户
 PUT	/api/users/:id	更新用户
 DELETE	/api/users/:id	删除用户
 PUT	/api/users/:id/permissions	更新权限
+
 订单管理
 方法	路径	说明
 GET	/api/orders	获取订单列表
 POST	/api/orders	新增订单
 PUT	/api/orders/:id	更新订单
 DELETE	/api/orders/:id	删除订单
+
 岗位管理
 方法	路径	说明
 GET	/api/roles	获取岗位列表
