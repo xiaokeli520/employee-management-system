@@ -49,7 +49,7 @@
 
 ### 安装依赖
 
-```bash
+````bash
 # 前端
 cd frontend
 npm install
@@ -57,6 +57,7 @@ npm install
 # 后端
 cd backend
 npm install
+
 初始化数据库
 bash
 cd backend
@@ -81,59 +82,79 @@ zhangsan	123	系统管理员
 lisi	123	人事经理
 wangwu	123	销售主管
 zhaoliu	123	普通员工
-📁 项目结构
-text
+
+---
+
+## 第3段：项目结构（复制这段）
+
+```markdown
+## 📁 项目结构
 employee-system/
-├── frontend/                 # 前端代码
-│   ├── src/
-│   │   ├── views/           # 页面
-│   │   │   ├── Login.vue
-│   │   │   ├── Dashboard.vue
-│   │   │   ├── employee/    # 人员管理
-│   │   │   ├── order/       # 订单管理
-│   │   │   └── role/        # 岗位管理
-│   │   ├── stores/          # 状态管理 (Pinia)
-│   │   ├── router/          # 路由配置
-│   │   └── layouts/         # 布局组件
-│   └── package.json
-├── backend/                  # 后端代码
-│   ├── src/
-│   │   ├── routes/          # API 路由
-│   │   │   ├── auth.js      # 认证
-│   │   │   ├── users.js     # 用户管理
-│   │   │   ├── orders.js    # 订单管理
-│   │   │   └── roles.js     # 岗位管理
-│   │   ├── database.js      # 数据库连接
-│   │   └── seed.js          # 数据初始化
-│   ├── database.sqlite      # SQLite 数据库
-│   └── package.json
+├── frontend/
+│ ├── src/
+│ │ ├── views/
+│ │ ├── stores/
+│ │ ├── router/
+│ │ └── layouts/
+│ └── package.json
+├── backend/
+│ ├── src/
+│ │ ├── routes/
+│ │ ├── database.js
+│ │ └── seed.js
+│ ├── database.sqlite
+│ └── package.json
 └── README.md
-📝 API 接口
-认证
-方法	路径	说明
-POST	/api/auth/login	用户登录
-用户管理
-方法	路径	说明
-GET	/api/users	获取用户列表
-GET	/api/users/:id	获取单个用户
-POST	/api/users	新增用户
-PUT	/api/users/:id	更新用户
-DELETE	/api/users/:id	删除用户
-PUT	/api/users/:id/permissions	更新用户权限
-订单管理
-方法	路径	说明
-GET	/api/orders	获取订单列表
-GET	/api/orders/:id	获取单个订单
-POST	/api/orders	新增订单
-PUT	/api/orders/:id	更新订单
-DELETE	/api/orders/:id	删除订单
-岗位管理
-方法	路径	说明
-GET	/api/roles	获取岗位列表
-GET	/api/roles/:id	获取单个岗位
-POST	/api/roles	新增岗位
-PUT	/api/roles/:id	更新岗位
-DELETE	/api/roles/:id	删除岗位
-👨‍💻 作者
-GitHub: @xiaokeli520
-```
+
+## 📝 API 接口
+
+### 认证
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| POST | /api/auth/login | 用户登录 |
+
+### 用户管理
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| GET | /api/users | 获取用户列表 |
+| POST | /api/users | 新增用户 |
+| PUT | /api/users/:id | 更新用户 |
+| DELETE | /api/users/:id | 删除用户 |
+| PUT | /api/users/:id/permissions | 更新权限 |
+
+### 订单管理
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| GET | /api/orders | 获取订单列表 |
+| POST | /api/orders | 新增订单 |
+| PUT | /api/orders/:id | 更新订单 |
+| DELETE | /api/orders/:id | 删除订单 |
+
+### 岗位管理
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| GET | /api/roles | 获取岗位列表 |
+| POST | /api/roles | 新增岗位 |
+| PUT | /api/roles/:id | 更新岗位 |
+| DELETE | /api/roles/:id | 删除岗位 |
+
+---
+
+## 👨‍💻 作者
+
+- GitHub: [@xiaokeli520](https://github.com/xiaokeli520)
+
+## 📄 License
+
+MIT
+````
+
+---
+
+## 👨‍💻 作者
+
+- GitHub: [@xiaokeli520](https://github.com/xiaokeli520)
+
+## 📄 License
+
+MIT
