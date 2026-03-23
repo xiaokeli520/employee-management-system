@@ -146,14 +146,3 @@ employee-system/
 ## 📄 License
 
 MIT
-````
-
----
-
-## 👨‍💻 作者
-
-- GitHub: [@xiaokeli520](https://github.com/xiaokeli520)
-
-## 📄 License
-
-MIT
